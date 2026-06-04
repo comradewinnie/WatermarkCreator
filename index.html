@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adding a Watermark</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Adding a Watermark to Image</h1>
+    </div>
+    <div class="container mt-3">
+        <div class="row">
+            <div>
+                <div class="outer-container">
+                    <form id="addWatermarkForm" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="imageInput" class="custom-file-upload" style="width:180px;">
+                                <img src="cloud-icon.svg" style="width:80%;height:80%;padding:15px;" alt="Cloud Icon" class="upload-icon"><br>
+                                Select Image
+                            </label>
+                            <input type="file" class="form-control-file" id="imageInput" accept="image/*" style="display: none"><br>
+                            <div id="selectedFileName" style="margin-top: 10px; font-style: italic;"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="watermarkText">Enter Watermark Text:</label>
+                            <input type="text" class="form-control" id="watermarkText">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <div id="optionsContainer">
+                    <label for="fontSelect" style="margin-bottom: 10px">Select Font:</label><br>
+                    <select id="fontSelect" style="margin-bottom: 15px">
+                        <option value="Arial">Arial</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Comic Sans MS">Comic Sans MS</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Impact">Impact</option>
+                    </select><br>
+                    <label for="positionRadio">Position:</label><br>
+                    <div id="positionRadio" style="margin-bottom: 15px">
+                        <input type="radio" id="topLeft" name="position" value="topLeft">
+                        <label for="topLeft">Top Left Corner</label><br>
+  
+                        <input type="radio" id="topRight" name="position" value="topRight">
+                        <label for="topRight">Top Right Corner</label><br>
+
+                        <input type="radio" id="center" name="position" value="center" checked>
+                        <label for="center">Center</label><br>
+                      
+                        <input type="radio" id="bottomLeft" name="position" value="bottomLeft">
+                        <label for="bottomLeft">Bottom Left Corner</label><br>
+  
+                        <input type="radio" id="bottomRight" name="position" value="bottomRight">
+                        <label for="bottomRight">Bottom Right Corner</label>
+                    </div>
+                    <div class="centered-button">
+                        <button type="button" id="processButton" class="btn btn-primary" disabled>Add Watermark</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div id="outputContainer">
+                    <button id="downloadButton" class="btn btn-success" style="background-color: #31c720; border: none;">Download Image</button><br>
+                    <img id="outputImage" style="margin-top: 15px" src="" alt="Output Image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
